@@ -16,5 +16,8 @@
             echo "帳密錯誤，登入失敗";
     }
     ?>
+    <div>
+        <a href="index.html">回首頁</a>
+    </div>
 </body>
-</html>
+</html> 

@@ -47,6 +47,7 @@
     </style>
 </head>
 <body>
+
     <div class="login-container">
         <h2>登入</h2>
     <form action="check_acc.php" method="post">
@@ -63,6 +64,9 @@
             <input type="submit" value="登入">
         </div>
     </form>
+    <p></p>
+    <div>
+    <a href="index.html">回首頁</a>
     </div>
 </body>
 </html>
