@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        
+
     </style>
 </head>
 <body>
     <h1>計算BMI</h1>
-    <form action="result.php" method="post">
+    <form action="result.php" method="get">
         <!-- 換行：<br>是早期的用法 現在多用<div> -->
         <div>
             <label for="height">身高：</label>
