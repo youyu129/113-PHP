@@ -9,6 +9,13 @@
     </style>
 </head>
 <body>
+
+    <?php
+    if(isset($_GET['bmi'])){
+        echo "你上一次量測的BMI為{$_GET['bmi']}";
+    }
+    ?>
+    
     <h1>計算BMI-GET</h1>
     <form action="result.php" method="get">
         <!-- 換行：<br>是早期的用法 現在多用<div> -->

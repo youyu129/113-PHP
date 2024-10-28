@@ -30,29 +30,33 @@ if(isset($_GET['weight'])){
     <h1>BMI結果</h1>
     <div>你的身高：<?=$height;?>公分</div>
     <div>你的體重：<?=$weight;?>公斤</div>
+    
     <?php
     $h=$height/100;
     $bmi=round($weight/($h*$h),2);
     ?>
+    
     <div>你的BMI為：<?=$bmi;?></div>
-<?php
-if($bmi<18.5){
-    $level="體重過輕";
-}elseif($bmi<24){
-    $level="健康體位";
-}elseif($bmi<27){
-    $level="過重";
-}elseif($bmi<30){
-    $level="輕度肥胖";
-}elseif($bmi<35){
-    $level="中度肥胖";
-}else{
-    $level="重度肥胖";
-}
-?>
+    
+    <?php
+    if($bmi<18.5){
+        $level="體重過輕";
+    }elseif($bmi<24){
+        $level="健康體位";
+    }elseif($bmi<27){
+        $level="過重";
+    }elseif($bmi<30){
+        $level="輕度肥胖";
+    }elseif($bmi<35){
+        $level="中度肥胖";
+    }else{
+        $level="重度肥胖";
+    }
+    ?>
+
     <div>體位判定為：<?=$level;?></div>
     <div>
-        <a href="index.php">回首頁/重新量測</a>
+        <a href="index.php?bmi=<?=$bmi;?>">回首頁/重新量測</a>
     </div>
 
 </body>
