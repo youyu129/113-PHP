@@ -14,11 +14,11 @@
         <!-- 換行：<br>是早期的用法 現在多用<div> -->
         <div>
             <label for="height">身高：</label>
-            <input type="number" name="height" id="height">cm
+            <input type="number" name="height" id="height" step="0.1">cm
         </div>
         <div>
             <label for="weight">體重：</label>
-            <input type="number" name="weight" id="weight">kg
+            <input type="number" name="weight" id="weight" step="0.1">kg
         </div>
         <div>
             <!-- 輸入input:submit+input+reset -->
