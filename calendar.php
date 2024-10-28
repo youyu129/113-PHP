@@ -10,13 +10,14 @@
     }
     td{
         padding:5px 10px;
-        text-align:center;
+        text-align: center;
         border:1px solid #999;
     }
     .holiday{
         background:pink;
+        color:red;
     }
-    .gray-text{
+    .grey-text{
         color:#999;
     }
     .today{
@@ -27,6 +28,7 @@
     </style>
 </head>
 <body>
+    <h1>萬年曆</h1>
 <ul>
     <li>有上一個月下一個月的按鈕</li>
     <li>萬年曆都在同一個頁面同一個檔案</li>
@@ -46,31 +48,25 @@ if(isset($_GET['year'])){
 
 if($month-1<1){
     $prevMonth=12;
-    $prevYear=$year+1;
+    $prevYear=$year-1;
 }else{
-    $prevMonth=$month+1;
-    $prevYear=$year+1;
+    $prevMonth=$month-1;
+    $prevYear=$year;
 }
 
 if($month+1>12){
     $nextMonth=1;
-    $nextYear=$year-1;
+    $nextYear=$year+1;
 }else{
-    $preMonth=$month-1;
-    $prevYear=$year-1;
+    $nextMonth=$month+1;
+    $nextYear=$year;
 }
-// $year = date("Y");
-// if ($month < 1) {
-//     $month = 12;
-//     $year--; 
-// } elseif ($month > 12) {
-//     $month = 1;
-//     $year++; 
-// }
+
 ?>
 <a href="">前年</a>
-<a href="calendar.php?&month=<?=$prevMonth-1;?>">上一個月</a><a href="calendar.php?month=<?=$month+1;?>">下一個月</a>
-<a href="calendar.php?year=<?=$month-12;?>">前年</a><a href="calendar.php?year=<?=$month+12;?>">明年</a>
+<a href="calendar.php?year=<?=$prevYear;?>&month=<?=$prevMonth;?>">上一個月</a>
+<a href="calendar.php?year=<?=$nextYear;?>&month=<?=$nextMonth;?>">下一個月</a>
+<a href="">明年</a>
 <h3><?php echo date("{$year}年{$month}月");?></h3>
 
 <table>
@@ -85,7 +81,7 @@ if($month+1>12){
     <td>六</td>
 </tr>
 <?php
-$firstDay="{$year}-{$month}-01";
+$firstDay="2024-{$month}-1";
 $firstDayTime=strtotime($firstDay);
 $firstDayWeek=date("w",$firstDayTime);
 
@@ -114,6 +110,5 @@ for($i=0;$i<6;$i++){
 }
 ?>
 </table>
-
 </body>
 </html>
