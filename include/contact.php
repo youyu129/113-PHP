@@ -7,14 +7,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>聯絡我們</h1>
-    <?php include("common/navbar.php");?>
 
+    <?php 
+    $header="聯絡我們";
+    $page="contact";
+    include("common/navbar.php");
+    ?>
 
     <main>
         <h2>歡迎聯絡我們</h2>
         <P>我們提供最好的服務</P>
     </main>
+
     <?php include("common/footer.html");?>
 </body>
 </html>

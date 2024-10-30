@@ -7,9 +7,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>登入</h1>
-    <?php include("common/navbar.php");?>
 
+    <?php 
+    $header="登入";
+    $page="login";
+    include("common/navbar.php");
+    ?>
 
     <main>
         <h2>請登入</h2>
@@ -25,6 +28,7 @@
             <input type="submit" value="登入">
         </form>
     </main>
+
     <?php include("common/footer.html");?>
 </body>
 </html>

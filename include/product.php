@@ -7,13 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>產品介紹</h1>
-    <?php include("common/navbar.php");?>
 
+    <?php 
+    $header="產品介紹";
+    $page="product";
+    include("common/navbar.php");
+    ?>
     <main>
         <h2>我們的產品</h2>
         <P>我們提供最好的產品</P>
     </main>
+
 <?php include("common/footer.html");?>
 </body>
 </html>
