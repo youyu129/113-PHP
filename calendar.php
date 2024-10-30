@@ -72,7 +72,26 @@ if($month+1>12){
     $nextYear=$year;
 }
 
-?><div class='nav'>
+//農曆
+$chiHolidays = ["02-10" => "農曆新年",
+                "06-10" => "端午節",
+                "09-17" => "中秋節",
+];
+//特定日期才會發生
+$spDate = ["2024-11-07"=> "立冬",
+           "2024-11-22"=> "小雪"];
+//每年固定會發生的假日
+$holidays = [
+    "01-01" => "元旦",
+    "02-28" => "和平紀念日",
+    "04-04" => "兒童節",
+    "04-05" => "清明節", 
+    "05-01" => "勞動節",
+    "10-10" => "國慶日"
+];
+
+?>
+<div class='nav'>
 <table  style="width:100%">
     <tr>
         <td style='test-align:left'>
@@ -106,7 +125,7 @@ if($month+1>12){
     <td>六</td>
 </tr>
 <?php
-$firstDay="2024-{$month}-1";
+$firstDay="{$year}-{$month}-1";
 $firstDayTime=strtotime($firstDay);
 $firstDayWeek=date("w",$firstDayTime);
 
@@ -128,8 +147,14 @@ for($i=0;$i<6;$i++){
         
         echo "<td class='$isHoliday $theMonth $isToday'>";
         echo date("d",$theDayTime);
+
+        if(isset($spDate[date("Y-m-d,",$theDayTime)])){
+            echo "<br>{$spDate[date("Y-m-d",$theDayTime)]}";
+        }
+        if(isset($holidays[date("m-d",$theDayTime)])){
+            echo "<br>{$holidays[date("m-d",$theDayTime)]}";
+        }
         echo "</td>";
-        
     }
     echo "</tr>";
 }
