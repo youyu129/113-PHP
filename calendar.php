@@ -7,8 +7,10 @@
     <style>
     table{
         border-collapse:collapse;
+        margin:auto;
     }
     td{
+        width: 65px;
         padding:5px 10px;
         text-align: center;
         border:1px solid #999;
@@ -24,6 +26,14 @@
         background:blue;
         color:white;
         font-weight:bolder;
+    }
+    .nav{
+        width: 687px;
+        margin:auto;
+    }
+    .nav table td{
+        border:0px;
+        padding:0;
     }
     </style>
 </head>
@@ -62,12 +72,27 @@ if($month+1>12){
     $nextYear=$year;
 }
 
-?>
-<a href="">前年</a>
-<a href="calendar.php?year=<?=$prevYear;?>&month=<?=$prevMonth;?>">上一個月</a>
-<a href="calendar.php?year=<?=$nextYear;?>&month=<?=$nextMonth;?>">下一個月</a>
-<a href="">明年</a>
-<h3><?php echo date("{$year}年{$month}月");?></h3>
+?><div class='nav'>
+<table  style="width:100%">
+    <tr>
+        <td style='test-align:left'>
+        <a href="">前年</a>
+        <a href="calendar.php?year=<?=$prevYear;?>&month=<?=$prevMonth;?>">上一個月</a>
+        </td>
+        <td>
+        <?php echo date("{$year}年{$month}月");?>
+        </td>
+        <td style='test-align:left'>
+        <a href="calendar.php?year=<?=$nextYear;?>&month=<?=$nextMonth;?>">下一個月</a>
+        <a href="">明年</a>
+        </td>
+    </tr>
+</table>
+
+    
+</div>
+
+
 
 <table>
 <tr>
