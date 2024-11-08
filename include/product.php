@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <?php 
-    $header="產品介紹";
     $page="product";
     include("common/navbar.php");
     ?>

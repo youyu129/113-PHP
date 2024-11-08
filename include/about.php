@@ -9,7 +9,6 @@
 <body>
 
 <?php 
-    $header="關於我們";
     $page="about";
     include("common/navbar.php");
     ?>
