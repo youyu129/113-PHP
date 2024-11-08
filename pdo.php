@@ -11,9 +11,9 @@
             border: 1px solid black;
             margin:auto;
         }
-        th{
-            background-color: #fff;
-            color:darkorange;
+        table tr:first-child {
+            background-color: lightgray;
+            color:brown;
             text-shadow:;
         }
         tr,
@@ -30,7 +30,7 @@
     <h1>資料庫連線</h1>
     <table>
     <tr>
-        <td>序號</td></td><td>班級名稱</td><td>班導師</td>
+        <td>序號</td></td><td>班級名稱</td><td>班導師</td><td>詳細資料</td>
     </tr>
         <?php
     // $dsn通常都用這個變數
@@ -51,6 +51,7 @@
             <td><?=$row['id'];?></td>
             <td><?=$row['name']?></td>
             <td><?=$row['tutor']?></td>
+            <td><a href="classes_detail.php">詳細資料</a></td>
         </tr>
     <?php
     }
