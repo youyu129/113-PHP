@@ -30,7 +30,7 @@
     <h1>資料庫連線</h1>
     <table>
     <tr>
-        <td>序號</td></td><td>班級名稱</td><td>班導師</td><td>詳細資料</td>
+        <td>序號</td></td><td>班級名稱</td><td>班導師</td>
     </tr>
         <?php
     // $dsn通常都用這個變數
@@ -49,9 +49,12 @@
     ?>
         <tr>
             <td><?=$row['id'];?></td>
-            <td><?=$row['name']?></td>
+            <td>
+                <a href="classes_detail.php?id=<?=$row['id'];?>">
+                <?=$row['name'];?>
+                </a>
+            </td>
             <td><?=$row['tutor']?></td>
-            <td><a href="classes_detail.php">詳細資料</a></td>
         </tr>
     <?php
     }
