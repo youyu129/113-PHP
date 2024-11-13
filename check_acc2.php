@@ -18,8 +18,17 @@
     $acc=$_POST['acc'];
     $pw=$_POST['pw'];
     
-    $sql="select * from `member` where `acc`='$acc' && `pw`='$pw'";
-    $row=$pdo->query($sql)>(PDO::FETCH_ASSOC);
+    // 全部欄位都撈
+    // $sql="select * from `member` where `acc`='$acc' && `pw`='$pw'";
+    
+    // 只撈一欄
+    $sql="select count(id) from `member` where `acc`='$acc' && `pw`='$pw'";
+    
+    // 取回的是陣列
+    // $row=$pdo->query($sql)->(PDO::FETCH_ASSOC);
+    
+    // 取回的只有 1
+    $row=$pdo->query($sql)->fetchColimn();
 
     // 用來檢查
     echo"<pre>";
@@ -28,7 +37,8 @@
 
     $pdo->query($sql);
 
-    if($acc==$row['acc'] && $pw==$row['pw']){
+    // if($acc==$row['acc'] && $pw==$row['pw']){
+    if($row>=1){
         echo"帳密正確，登入成功";
         echo "<br><a href='login2,php'>回首頁</a>";
         }else{
