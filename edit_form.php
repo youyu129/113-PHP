@@ -95,7 +95,11 @@
     ?>
     
     <h1>會員資料</h1>
-
+<?php
+$dsn="mysql:host=localhost;charset=utf8;dbname=crud";
+$pdo=new PDO ($dsn,'root','');
+$mem=$pdo->query("select * from `member` where `id`='{$_GET['id']}'")->fetch(PDO::FETCH_ASSOC);
+?>
     <!-- form也可以傳給自己 但因為cookie有時候有些地方會出問題 -->
     <!-- <form action="?" method="post"> -->
 
@@ -104,19 +108,19 @@
     <form action="edit.php" method="post">
         <div>
             <label for="">帳號</label>：
-            <input type="text" name="acc" id="">
+            <input type="text" name="acc" value="<?=$mem['acc'];?>">
         </div>
         <div>
             <label for="">密碼</label>：
-            <input type="password" name="pw" id="">
+            <input type="password" name="pw" value="<?=$mem['pw'];?>>
         </div>
         <div>
             <label for="">電子郵件</label>：
-            <input type="text" name="email" id="">
+            <input type="text" name="email" value="<?=$mem['email'];?>>
         </div>
         <div>
             <label for="">電話</label>：
-            <input type="text" name="tel" id="">
+            <input type="text" name="tel" value="<?=$mem['tel'];?>">
         </div>
         <div>
             <input type="submit" value="註冊">
