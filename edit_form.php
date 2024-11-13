@@ -112,18 +112,19 @@ $mem=$pdo->query("select * from `member` where `id`='{$_GET['id']}'")->fetch(PDO
         </div>
         <div>
             <label for="">密碼</label>：
-            <input type="password" name="pw" value="<?=$mem['pw'];?>>
+            <input type="password" name="pw" value="<?=$mem['pw'];?>">
         </div>
         <div>
             <label for="">電子郵件</label>：
-            <input type="text" name="email" value="<?=$mem['email'];?>>
+            <input type="text" name="email" value="<?=$mem['email'];?>">
         </div>
         <div>
             <label for="">電話</label>：
             <input type="text" name="tel" value="<?=$mem['tel'];?>">
         </div>
         <div>
-            <input type="submit" value="註冊">
+            <input type="hidden" name="id" value="<?=$mem['id'];?>">
+            <input type="submit" value="編輯">
             <input type="reset" name="" id="" value="重置">
         </div>
         <div>
