@@ -48,25 +48,27 @@
 </head>
 <body>
 
+<?php
+
+if(!isset($_COOKIE['login'])){
+?>
     <div class="login-container">
         <h2>登入</h2>
-    <form action="check_acc.php" method="post">
-        <div>
-            <label for="帳號">帳號</label>
-            <input type="text" name="acc" id="acc">
-        </div>
-        <div>
-            <label for="密碼">密碼</label>
-            <input type="password" name="pw" id="pw">
-        </div>
-        <P></P>
-        <div>
+        <form action="check_acc.php" method="post">
+            <input type="text" name="acc" placeholder="使用者名稱" required>
+            <input type="password" name="pw" placeholder="密碼" required>
             <input type="submit" value="登入">
-        </div>
-    </form>
-    <p></p>
-    <div>
-    <a href="index.html">回首頁</a>
+        </form>
     </div>
+
+    <?php
+}else{
+?>
+        <div>
+            你已登入
+        </div>
+<?php
+}
+?>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>登入畫面</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -45,29 +45,41 @@
             cursor: pointer;
             font-size: 16px;
         }
+        .home {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
+<?php
 
+if(isset($_GET['err'])){
+    echo "<h3 style='color:red;text-align:center'>帳號或密碼錯誤</h3>";
+}
+
+
+if(!isset($_COOKIE['login'])){
+?>
     <div class="login-container">
         <h2>登入</h2>
-    <form action="check_acc2.php" method="post">
-        <div>
-            <label for="帳號">帳號</label>
-            <input type="text" name="acc" id="acc">
-        </div>
-        <div>
-            <label for="密碼">密碼</label>
-            <input type="password" name="pw" id="pw">
-        </div>
-        <P></P>
-        <div>
+        <form action="check_acc2.php" method="post">
+            <input type="text" name="acc" placeholder="使用者名稱" required>
+            <input type="password" name="pw" placeholder="密碼" required>
             <input type="submit" value="登入">
+        </form>
+    </div>
+
+    <?php
+}else{
+?>
+        <div>
+            你已登入
         </div>
-    </form>
-    <p></p>
-    <div>
-    <a href="index.html">回首頁</a>
+<?php
+}
+?>
+    <div class="home">
+        <a href="index.html">回首頁</a>
     </div>
 </body>
 </html>

@@ -77,6 +77,9 @@
         form input[type=reset] {
             background-color: rgb(247, 228, 199);
         }
+        .home {
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -123,7 +126,9 @@
 
         </div>
     </form>
-
+    <div class="home">
+        <a href="index.html">回首頁</a>
+    </div>
 </body>
 
 </html>

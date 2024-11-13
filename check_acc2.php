@@ -28,21 +28,21 @@
     // $row=$pdo->query($sql)->(PDO::FETCH_ASSOC);
     
     // 取回的只有 1
-    $row=$pdo->query($sql)->fetchColimn();
+    $row=$pdo->query($sql)->fetchColumn();
 
     // 用來檢查
-    echo"<pre>";
-    print_r($row);
-    echo"</pre>";
+    // echo"<pre>";
+    // print_r($row);
+    // echo"</pre>";
 
     $pdo->query($sql);
 
     // if($acc==$row['acc'] && $pw==$row['pw']){
     if($row>=1){
-        echo"帳密正確，登入成功";
-        echo "<br><a href='login2,php'>回首頁</a>";
-        }else{
-            echo "帳密錯誤，登入失敗";
+        header("location:success.php");
+    }else{
+        header("location:login2.php?err=1");
+        echo"帳密錯誤：登入失敗";
     }
     ?>
 
