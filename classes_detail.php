@@ -17,15 +17,30 @@ echo $class_sql
     <title><?=$class['name'];?>詳細資料</title>
 </head>
 <body>
-    <h1>班級學員</h1>
+    <h1><?=$class;?>班級學員</h1>
     <h2>班級導師<?=$class['tutor'];?></h2>
     <?php
     $class_members="select school_num,seat_num from class_student where class_code='";
     $members;
-    foreach($members as $mem){
+    ?>
+    <table>
+        <tr>
+            <td>座號</td>
+            <td>學號</td>
+            <td>姓名</td>
+        </tr>
+        <tr>
+            <td>座號</td>
+            <td>學號</td>
+            <td>姓名</td>
+        </tr>
+
+    <?php
+    foreach($members as $idx => $mem){
+        $stu
 
     }
     ?>
-
+    </table>
 </body>
 </html>
